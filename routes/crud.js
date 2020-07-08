@@ -13,7 +13,7 @@ const notemodel = mongoose.model('noteModel')
 
 //to upload file
 router.post('/upload',upload.single('notefile'),(req,res)=>{
-const newnote = new notemodel({ files :req.file.notefile,note:req.body.note,addedBy:req.user})
+const newnote = new notemodel({ files :req.file.originalname,note:req.body.note,addedBy:req.user})
  newnote.save()
  .then(data =>{
     res.status(200).json([{"status":"success"},{"note" : data.note}])
