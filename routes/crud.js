@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
+const multer = require('multer');
+var upload = multer({ dest: 'uploads/'})
+
 const { checkLoginUser } = require("../middlewares/authorize")
 require("../model/notes")
 require("../model/user")
@@ -8,10 +11,20 @@ const usermodel = mongoose.model('userModel')
 const notemodel = mongoose.model('noteModel')
 
 
-
+//to upload file
+router.post('/upload',upload.single('notefile'),(req,res)=>{
+const newnote = new notemodel({ files :req.file.notefile,note:req.body.note,addedBy:req.user})
+ newnote.save()
+ .then(data =>{
+    res.status(200).json([{"status":"success"},{"note" : data.note}])
+})
+.catch(err => {
+    res.status(400).send(err)
+})
+})
 
 // to fetch all the notes
-router.get('/getNote',checkLoginUser,(req,res,)=>{
+router.get('/getNotes',checkLoginUser,(req,res,)=>{
 
 notemodel.find({addedBy:req.user._id})
 .populate('addedBy','_id note')

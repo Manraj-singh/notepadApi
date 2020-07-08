@@ -1,10 +1,10 @@
 {
   "name": "crud_api",
   "version": "1.0.0",
-  "description": "crud api using nodejs,expressjs,mongoDB",
+  "description": "notepad API for users to store notes with files",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "manraj singh",
   "license": "MIT",
@@ -16,6 +16,8 @@
     "express-generator": "^4.16.1",
     "jsonwebtoken": "^8.5.1",
     "localstorage": "^1.0.1",
-    "mongoose": "^5.9.18"
+    "mongoose": "^5.9.18",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4"
   }
 }

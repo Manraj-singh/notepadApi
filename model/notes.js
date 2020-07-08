@@ -2,7 +2,10 @@
 const mongoose = require('mongoose')
 
 const noteSchema = new mongoose.Schema({
-	
+	files:{
+        type:mongoose.Schema.Types.Buffer,
+        default:"no file"
+    },
     note:{
         type:String,
         required:true
