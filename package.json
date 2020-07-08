@@ -1,0 +1,21 @@
+{
+  "name": "crud_api",
+  "version": "1.0.0",
+  "description": "crud api using nodejs,expressjs,mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "manraj singh",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "localstorage": "^1.0.1",
+    "mongoose": "^5.9.18"
+  }
+}

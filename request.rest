@@ -1,0 +1,50 @@
+POST http://localhost:3000/register
+Content-Type: application/json;
+
+{
+    "name":"manraj",
+    "email":"a@b.com",
+    "password":"abcdef",
+    "cpassword":"abwcdef"
+
+};
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json;
+
+{
+    "email":"a@b.com",
+    "password":"abcdef"
+
+}; 
+
+
+###
+GET http://localhost:3000/getNote
+
+###
+POST http://localhost:3000/newNote
+Content-Type: application/json;
+
+{
+    "note":"abcddee"
+   
+
+};
+
+###
+
+POST http://localhost:3000/editNote/
+Content-Type: application/json;
+
+{
+    "note":"edited note"
+   
+
+};
+###
+
+POST http://localhost:3000/deleteNote/
+Content-Type: application/json;
+
